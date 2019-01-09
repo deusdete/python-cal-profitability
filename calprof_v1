@@ -1,0 +1,21 @@
+ano = 12
+rendP = 0.0037
+rendTs = 0.0075
+
+def calcRend (rendementos):
+    i = 0
+    mes = 1
+    while i < ano:
+        resul = rendementos * rendTs
+        print("Valor no %d mes: %s" % (mes, str(resul)) )
+        rendementos += resul
+        i = i + 1
+        mes = mes + 1
+    return rendementos
+
+val = float(input("Digito o valor inicial: "))
+ganhos = calcRend(val) - val
+valoAcum = ganhos+val
+
+print("Gantos totais em 12 meses: R$ %d \nValor acomulado: R$%d " % (ganhos, valoAcum))
+print("Você ganharia na poupança: R$%d" % ((val*rendP)*ano))
